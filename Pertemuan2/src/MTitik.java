@@ -9,7 +9,7 @@ public class MTitik {
         T1.setOrdinat(6);
         T1.printTitik();
         T2.printTitik();
-        
+
         Q1 = T1.getKuadran();
         Q2 = T2.getKuadran();
         System.out.println(Q1);
@@ -20,7 +20,10 @@ public class MTitik {
         System.out.println(J1);
         System.out.println(J2);
 
+        T1.refleksiX();
+        T2.refleksiY();
+        T1.printTitik();
+        T2.printTitik();
         
-
     }
 }

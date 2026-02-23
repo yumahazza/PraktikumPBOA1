@@ -81,6 +81,28 @@ public class Titik {
         return Math.sqrt((x * x) + (y * y));
     }
 
+    void refleksiX(){
+        ordinat = ordinat * (-1);
+    }
+
+    void refleksiY(){
+        absis = absis * (-1);
+    }
+
+    Titik getRefleksiX(){
+        Titik T = new Titik();
+        T.refleksiX();
+
+        return T;
+    }
+
+    Titik getRefleksiY(){
+        Titik T = new Titik();
+        T.refleksiY();
+
+        return T;
+    }
+
 
 
 }
