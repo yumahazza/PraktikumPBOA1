@@ -8,4 +8,3 @@ public class Mtitik {
         T1.printTitik();  
     }
 }
-
