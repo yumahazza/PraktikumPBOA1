@@ -1,6 +1,7 @@
 /* Nama File    : Titik.java
  * Deskripsi    : berisi atribut dan method dalam class Titik
  * Pembuat      : Yuma Hazza Yuditama
+ * NIM          : 24060124120035
  * Tanggal      : 23 Februari 2026
  */
 
@@ -21,7 +22,9 @@ public class Titik {
     
     // konstruktor untuk membuat titik (0, 0)
     Titik(){
-        this(0, 0);
+        this.absis = 0;
+        this.ordinat = 0;
+        counterTitik++;
     }
 
     static int getCounterTitik(){
@@ -50,24 +53,25 @@ public class Titik {
     }
 
     void printTitik(){
-        System.out.println("Titik (" + absis + ", " + ordinat + ")");
-        
+        System.out.println("Titik (" + absis + ", " + ordinat + ")"); 
     }
 
     int getKuadran(){
         if(absis > 0){
             if(ordinat > 0){
                 return 1;
-            } else{
+            } else if(ordinat < 0){
                 return 4;
             }
-        } else{
+        } else if(absis < 0){
             if(ordinat > 0){
                 return 2;
-            } else{
+            } else if(ordinat < 0){
                 return 3;
             }
         }
+
+        return 0;
     }
 
     double getJarakPusat(){
@@ -91,21 +95,17 @@ public class Titik {
 
     Titik getRefleksiX(){
         Titik T = new Titik();
-        T.refleksiX();
+        T.absis = absis;
+        T.ordinat = ordinat * (-1);
 
         return T;
     }
 
     Titik getRefleksiY(){
         Titik T = new Titik();
-        T.refleksiY();
+        T.absis = absis * (-1);
+        T.ordinat = ordinat;
 
         return T;
     }
-
-
-
 }
-
-
-
