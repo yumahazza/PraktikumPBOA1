@@ -14,9 +14,7 @@ public class Kendaraan {
     // konstruktor dengan parameter
     public Kendaraan(String noPlat, String jenis){
         this.noPlat = noPlat;
-        if(jenis == "motor" || jenis == "Motor"){
-            this.jenis = jenis;
-        } else if(jenis == "mobil" || jenis == "Mobil"){
+        if(jenis == "motor" || jenis == "Motor" || jenis == "mobil" || jenis == "Mobil"){
             this.jenis = jenis;
         } else{
             // asusmsi jika mengisi selain motor atau mobil
