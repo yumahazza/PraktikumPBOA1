@@ -17,7 +17,7 @@ public class MPegawai{
         Pegawai P1 = new Pegawai();
         Pegawai P2 = new Pegawai();
         Tendik P3 = new Tendik();
-        Dosen Dx = new Dosen();
+        DosenTetap Dx = new DosenTetap();
 
         // Variabel tanggal
         String TglLahir_P1 = "28 Maret 1990";
@@ -53,11 +53,11 @@ public class MPegawai{
 
         /* Aplikasi subclass Dosen */
         System.out.println("###### CLASS DOSEN ######");
-        Dx.setNIP("19730200371");
+        Dx.setNIP("315049");
+        Dx.setNIDN("19730200371");
         Dx.setNama("Dr. Putro Ajibanar, S.T., M.Sc.");
         Dx.setTglLahir(TglLahir_Dx);
         Dx.setTMT(tmt_Dx);
-        Dx.setJabatan("Dosen, Peneliti BRIN");
         Dx.setFakultas("Fakultas Teknik");
         Dx.setMasaKerja();
         Dx.setTglPensiun();

@@ -120,13 +120,7 @@ public class Pegawai{
     }
 
      // mutator atribut Tanggal Pensiun
-    public void setTglPensiun(){
-        LocalDate date = LocalDate.parse(this.TglLahir, tanggalID);
-        LocalDate hitungTglPensiun = date.plusYears(this.BUP);
-        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
-        String TglPensiun = hitungTglPensiun2.format(tanggalID);
-        this.TglPensiun = TglPensiun;
-    }
+    public void setTglPensiun(){}
 
     // mutator atribut GajiPokok
     public void setGajiPokok(double GajiPokok){
@@ -136,14 +130,8 @@ public class Pegawai{
     // mutator atribut Tunjangan
     public void setTunjangan(){}
 
-    // method untuk menampilkan format atribut TglPensiun
-    public void printTglPensiun(){
-        LocalDate tgl_form = LocalDate.parse(this.TglLahir, tanggalID);
-        LocalDate hitungTglPensiun = tgl_form.plusYears(this.BUP);
-        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
-        String TanggalPensiun = hitungTglPensiun2.format(tanggalID);
-        System.out.println("Tanggal Pensiun : " + TanggalPensiun);
-    }
+
+    /* METHOD LAINNYA */
 
     // method untuk menampilkan format untuk atribut GajiPokok
     public void printGajiPokok(){
@@ -190,7 +178,7 @@ public class Pegawai{
         System.out.println("Jabatan         : " + Jabatan);
         printInfoPos();
         System.out.println("Masa Kerja      : " + MasaKerja);
-        printTglPensiun();
+        System.out.println("Tanggal Pensiun : " + TglPensiun);
         printGajiPokok();
         printTunjangan();
     }

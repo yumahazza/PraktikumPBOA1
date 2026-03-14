@@ -29,6 +29,16 @@ public class Tendik extends Pegawai{
         }
     }
 
+    // mutator atribut TglPensiun
+    @Override
+    public void setTglPensiun(){
+        LocalDate tgl_form = LocalDate.parse(this.TglLahir, tanggalID);
+        LocalDate hitungTglPensiun = tgl_form.plusYears(this.BUP);
+        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
+        String TanggalPensiun = hitungTglPensiun2.format(tanggalID);
+        System.out.println("Tanggal Pensiun : " + TanggalPensiun);
+    }
+
     // mutator atribut Tunjangan
     @Override
     public void setTunjangan(){

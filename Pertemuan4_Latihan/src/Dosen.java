@@ -21,14 +21,24 @@ public class Dosen extends Pegawai{
         this.Fakultas = Fakultas;
     }
 
+    // mutator untuk atribut TglPensiun
+    @Override
+    public void setTglPensiun(){
+        LocalDate tgl_form = LocalDate.parse(this.TglLahir, tanggalID);
+        LocalDate hitungTglPensiun = tgl_form.plusYears(this.BUP);
+        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
+        String TanggalPensiun = hitungTglPensiun2.format(tanggalID);
+        this.TglPensiun = TanggalPensiun;
+    }
+
     // mutator untuk atribut Tunjangan
     @Override
     public void setTunjangan(){
         LocalDate tmt = LocalDate.parse(this.TMT, tanggalID);
         Period masaKerja = Period.between(tmt, LocalDate.now());
         int tahunKerja = masaKerja.getYears();
-        double bonus = tahunKerja * this.GajiPokok;
-        this.Tunjangan = bonus;
+        double Bonus = tahunKerja * this.GajiPokok;
+        this.Tunjangan = Bonus;
     }
 
     /* SELEKTOR */
@@ -43,8 +53,4 @@ public class Dosen extends Pegawai{
     public void printInfoPos(){
         System.out.println("Fakultas        : " + Fakultas);
     }
-
-
-
-
 }
