@@ -1,5 +1,5 @@
 /* Nama file    : Tendik.java
- * Deskripsi    : program class Tendik berisi atribut dan method
+ * Deskripsi    : program yang berisi atribut dan method class Tendik 
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 14 Maret 2026
 */

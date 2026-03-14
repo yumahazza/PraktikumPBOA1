@@ -1,5 +1,5 @@
 /* Nama file    : DosenTetap.java
- * Deskripsi    : program class DosenTetap berisi atribut dan method
+ * Deskripsi    : program yang berisi atribut dan method class DosenTetap 
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 14 Maret 2026
 */

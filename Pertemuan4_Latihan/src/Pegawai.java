@@ -1,5 +1,5 @@
 /* Nama file    : Pegawai.java
- * Deskripsi    : program class Pegawai berisi atribut dan method
+ * Deskripsi    : program yang berisi atribut dan method class Pegawai
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 13 Maret 2026
 */

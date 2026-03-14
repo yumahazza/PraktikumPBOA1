@@ -4,7 +4,7 @@
  * Tanggal      : 14 Maret 2026
 */
 
-/* LIBRARU */
+/* LIBRARY */
 import java.time.LocalDate;
 import java.time.Period;
 

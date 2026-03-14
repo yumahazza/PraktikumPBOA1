@@ -1,5 +1,5 @@
 /* Nama file    : DosenTamu.java
- * Deskripsi    : program class DosenTamu berisi atribut dan method
+ * Deskripsi    : program yang berisi atribut dan method class DosenTamu 
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 14 Maret 2026
 */

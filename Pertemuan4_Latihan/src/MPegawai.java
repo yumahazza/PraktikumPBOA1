@@ -1,5 +1,6 @@
 /* Nama file    : MPegawai.java
- * Deskripsi    : program realisasi atribut dan method class Pegawai
+ * Deskripsi    : program aplikasi atribut dan method subclass 
+                Tendik, Dosen Tetap, dan Dosen Tamu
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 13 Maret 2026
 */
