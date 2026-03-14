@@ -4,6 +4,10 @@
  * Tanggal      : 14 Maret 2026
 */
 
+/* LIBRARY */
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Tendik extends Pegawai{
     /* ATRIBUT */
     private String Bidang;
@@ -14,7 +18,7 @@ public class Tendik extends Pegawai{
         setBUP(55);
         setJabatan("Tendik");
     }
-
+    
     /* MUTATOR */
     // mutator atribut Bidang
     public void setBidang(String Bidang){
@@ -25,17 +29,26 @@ public class Tendik extends Pegawai{
         }
     }
 
+    // mutator atribut Tunjangan
+    @Override
+    public void setTunjangan(){
+        LocalDate tmt = LocalDate.parse(this.TMT, tanggalID);
+        Period masaKerja = Period.between(tmt, LocalDate.now());
+        int tahunKerja = masaKerja.getYears();
+        double bonus = 0.01 * tahunKerja * this.GajiPokok;
+        this.Tunjangan = bonus;
+    }
+
     /* SELEKTOR */
     // selektor atribut Bidang
     public String getBidang(){
         return Bidang;
     }
 
-    // method untuk menampilkan info atau detaul class Tendik
+    // method untuk menampilkan info atau detail class Tendik
     @Override
-    public void printInfo(){
-        super.printInfo();
-        System.out.println("Bidang: " + Bidang);
+    public void printInfoPos(){
+        System.out.println("Bidang          : " + Bidang);
     }
 
 

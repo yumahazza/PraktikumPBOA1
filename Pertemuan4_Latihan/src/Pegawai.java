@@ -4,18 +4,28 @@
  * Tanggal      : 13 Maret 2026
 */
 
-public class Pegawai {
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+public class Pegawai{
+    /* Variabel untuk kebutuhan format */
+    DateTimeFormatter tanggalID = DateTimeFormatter.ofPattern("dd MMMM yyyy", new Locale("id","ID"));
+
     /* ATRIBUT */
-    private String NIP;
-    private String Nama;
-    private String TglLahir;
-    private String TMT;
-    private String Jabatan;
-    private String MasaKerja;
-    private String TglPensiun;
-    private String GajiPokok;
-    private String Tunjangan;
-    private int BUP;
+    protected String NIP;
+    protected String Nama;
+    protected String TglLahir;
+    protected String TMT;
+    protected String Jabatan;
+    protected String MasaKerja;
+    protected String TglPensiun;
+    protected double GajiPokok;
+    protected double Tunjangan;
+    protected int BUP;
 
     /* METHOD */
     /* KONSTRUKTOR */
@@ -60,12 +70,12 @@ public class Pegawai {
     }
 
     // selektor atribut Gaji Pokok
-    public String getGajiPokok(){
+    public double getGajiPokok(){
         return GajiPokok;
     }
 
     // selektor atribut Tunjangan
-    public String getTunjangan(){
+    public double getTunjangan(){
         return Tunjangan;
     }
 
@@ -98,16 +108,61 @@ public class Pegawai {
 
     // mutator atribut Jabatan
     public void setJabatan(String Jabatan){
-        if(Jabatan == "Tendik" || Jabatan == "Dosen Tetap" || Jabatan == "Dosen Tamu"){
-            this.Jabatan = Jabatan;
-        } else{
-            this.Jabatan = "-";
-        }
+        this.Jabatan = Jabatan;
+    }
+
+    // mutator atribut MasaKerja
+    public void setMasaKerja(){
+        LocalDate tgl_form = LocalDate.parse(this.TMT, tanggalID);
+        Period hitungMasaKerja = Period.between(tgl_form, LocalDate.now());
+        String MasaKerja = hitungMasaKerja.getYears() + " tahun " + hitungMasaKerja.getMonths() + " bulan ";
+        this.MasaKerja = MasaKerja;
+    }
+
+     // mutator atribut Tanggal Pensiun
+    public void setTglPensiun(){
+        LocalDate date = LocalDate.parse(this.TglLahir, tanggalID);
+        LocalDate hitungTglPensiun = date.plusYears(this.BUP);
+        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
+        String TglPensiun = hitungTglPensiun2.format(tanggalID);
+        this.TglPensiun = TglPensiun;
     }
 
     // mutator atribut GajiPokok
-    public void setGajiPokok(String GajiPokok){
+    public void setGajiPokok(double GajiPokok){
         this.GajiPokok = GajiPokok;
+    }
+
+    // mutator atribut Tunjangan
+    public void setTunjangan(){}
+
+    // method untuk menampilkan format atribut TglPensiun
+    public void printTglPensiun(){
+        LocalDate tgl_form = LocalDate.parse(this.TglLahir, tanggalID);
+        LocalDate hitungTglPensiun = tgl_form.plusYears(this.BUP);
+        LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
+        String TanggalPensiun = hitungTglPensiun2.format(tanggalID);
+        System.out.println("Tanggal Pensiun : " + TanggalPensiun);
+    }
+
+    // method untuk menampilkan format untuk atribut GajiPokok
+    public void printGajiPokok(){
+        DecimalFormatSymbols simbol = new DecimalFormatSymbols();
+        simbol.setGroupingSeparator('.');
+        simbol.setDecimalSeparator(',');
+        DecimalFormat rupiah = new DecimalFormat("Rp #,##0.00", simbol);
+        String GajiPokok = rupiah.format(this.GajiPokok);
+        System.out.println("Gaji Pokok      : " + GajiPokok);
+    }
+
+    // method untuk menampilkan format untuk atribut Tunjangan
+    public void printTunjangan(){
+        DecimalFormatSymbols simbol = new DecimalFormatSymbols();
+        simbol.setGroupingSeparator('.');
+        simbol.setDecimalSeparator(',');
+        DecimalFormat rupiah = new DecimalFormat("Rp #,##0.00", simbol);
+        String Tunjangan = rupiah.format(this.getTunjangan());
+        System.out.println("Tunjangan       : " + Tunjangan);  
     }
 
     // mutator atribut BUP
@@ -119,18 +174,25 @@ public class Pegawai {
         }
     }
 
+    // method tambahan untuk menampilkan NIDN dan NIDK subclass Dosen
+    public void printInfoNID(){}
 
-    // method untuk menampilkan info atau detail class Pegawai
+    // method tambahan untuk menampilkan info subclass
+    public void printInfoPos(){}
+
+    // method untuk menampilkan info atau detail superclass Pegawai
     public void printInfo(){
-        System.out.println("NIP: " + NIP);
-        System.out.println("Nama: " + Nama);
-        System.out.println("Tanggal Lahir: " + TglLahir);
-        System.out.println("TMT: " + TMT);
-        System.out.println("Jabatan: " + Jabatan);
-        System.out.println("Masa Kerja: " + MasaKerja);
-        System.out.println("Tanggal Pensiun: " + TglPensiun);
-        System.out.println("Gaji Pokok: " + GajiPokok);
-        System.out.println("Tunjangan: " + Tunjangan);
+        System.out.println("NIP             : " + NIP);
+        printInfoNID();
+        System.out.println("Nama            : " + Nama);
+        System.out.println("Tanggal Lahir   : " + TglLahir);
+        System.out.println("TMT             : " + TMT);
+        System.out.println("Jabatan         : " + Jabatan);
+        printInfoPos();
+        System.out.println("Masa Kerja      : " + MasaKerja);
+        printTglPensiun();
+        printGajiPokok();
+        printTunjangan();
     }
 
 
