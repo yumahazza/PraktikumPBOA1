@@ -4,6 +4,7 @@
  * Tanggal      : 14 Maret 2026
 */
 
+/* LIBRARY */
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -17,6 +18,7 @@ public class DosenTetap extends Dosen{
         setBUP(65);
         setJabatan("Dosen Tetap");
     }
+
 
     /* MUTATOR */
     // mutator untuk atribut NIDN
@@ -50,11 +52,13 @@ public class DosenTetap extends Dosen{
         return NIDN;
     }
 
-
+    
     /* METHOD LAINNYA */
     // method untuk menampilkan info NIDN
     @Override
     public void printInfoNID(){
         System.out.println("NIDN            : " + NIDN);
     }
+
+
 }

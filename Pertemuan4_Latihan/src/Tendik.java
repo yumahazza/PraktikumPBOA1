@@ -19,6 +19,7 @@ public class Tendik extends Pegawai{
         setJabatan("Tendik");
     }
     
+    
     /* MUTATOR */
     // mutator atribut Bidang
     public void setBidang(String Bidang){
@@ -36,7 +37,7 @@ public class Tendik extends Pegawai{
         LocalDate hitungTglPensiun = tgl_form.plusYears(this.BUP);
         LocalDate hitungTglPensiun2 = hitungTglPensiun.plusMonths(1);
         String TanggalPensiun = hitungTglPensiun2.format(tanggalID);
-        System.out.println("Tanggal Pensiun : " + TanggalPensiun);
+        this.TglPensiun = TanggalPensiun;
     }
 
     // mutator atribut Tunjangan
@@ -49,12 +50,15 @@ public class Tendik extends Pegawai{
         this.Tunjangan = bonus;
     }
 
+
     /* SELEKTOR */
     // selektor atribut Bidang
     public String getBidang(){
         return Bidang;
     }
 
+
+    /* METHOD LAINNYA */
     // method untuk menampilkan info atau detail class Tendik
     @Override
     public void printInfoPos(){

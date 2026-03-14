@@ -4,6 +4,7 @@
  * Tanggal      : 14 Maret 2026
 */
 
+/* LIBRARU */
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -14,6 +15,7 @@ public class Dosen extends Pegawai{
     /* METHOD */
     /* KONSTRUKTOR */
     public Dosen(){}
+
 
     /* MUTATOR */
     // mutator untuk atribut Fakultas
@@ -41,11 +43,13 @@ public class Dosen extends Pegawai{
         this.Tunjangan = Bonus;
     }
 
+
     /* SELEKTOR */
     // selektor untuk atribut Fakultas
     public String getFakultas(){
         return Fakultas;
     }
+
 
     /* METHOD LAINNYA */
     // method untuk menampilkan info fakultas
@@ -53,4 +57,6 @@ public class Dosen extends Pegawai{
     public void printInfoPos(){
         System.out.println("Fakultas        : " + Fakultas);
     }
+
+
 }

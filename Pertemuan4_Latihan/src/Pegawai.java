@@ -4,6 +4,7 @@
  * Tanggal      : 13 Maret 2026
 */
 
+/* LIBRARY */
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
@@ -29,9 +30,63 @@ public class Pegawai{
 
     /* METHOD */
     /* KONSTRUKTOR */
-    // konstruktor
-    public Pegawai(){
+    public Pegawai(){}
+
+
+    /* MUTATOR */
+    // mutator atribut NIP
+    public void setNIP(String NIP){
+        this.NIP = NIP;
     }
+
+    // mutator atribut Nama
+    public void setNama(String Nama){
+        this.Nama = Nama;
+    }
+
+    // mutator atribut TglLahir
+    public void setTglLahir(String TglLahir){
+        this.TglLahir = TglLahir;
+    }
+
+    // mutator atribut TMT
+    public void setTMT(String TMT){
+        this.TMT = TMT;
+    }
+
+    // mutator atribut Jabatan
+    public void setJabatan(String Jabatan){
+        this.Jabatan = Jabatan;
+    }
+
+    // mutator atribut MasaKerja
+    public void setMasaKerja(){
+        LocalDate tgl_form = LocalDate.parse(this.TMT, tanggalID);
+        Period hitungMasaKerja = Period.between(tgl_form, LocalDate.now());
+        String MasaKerja = hitungMasaKerja.getYears() + " tahun " + hitungMasaKerja.getMonths() + " bulan ";
+        this.MasaKerja = MasaKerja;
+    }
+
+    // mutator atribut Tanggal Pensiun
+    public void setTglPensiun(){}
+
+    // mutator atribut GajiPokok
+    public void setGajiPokok(double GajiPokok){
+        this.GajiPokok = GajiPokok;
+    }
+
+    // mutator atribut Tunjangan
+    public void setTunjangan(){}
+
+    // mutator atribut BUP
+    public void setBUP(int BUP){
+        if(BUP == 65 || BUP == 55){
+            this.BUP = BUP;
+        } else{
+            this.BUP = 0;
+        }
+    }
+
 
     /* SELEKTOR */
     // selektor atribut NIP
@@ -85,54 +140,7 @@ public class Pegawai{
     }
 
 
-    /* MUTATOR */
-    // mutator atribut NIP
-    public void setNIP(String NIP){
-        this.NIP = NIP;
-    }
-
-    // mutator atribut Nama
-    public void setNama(String Nama){
-        this.Nama = Nama;
-    }
-
-    // mutator atribut TglLahir
-    public void setTglLahir(String TglLahir){
-        this.TglLahir = TglLahir;
-    }
-
-    // mutator atribut TMT
-    public void setTMT(String TMT){
-        this.TMT = TMT;
-    }
-
-    // mutator atribut Jabatan
-    public void setJabatan(String Jabatan){
-        this.Jabatan = Jabatan;
-    }
-
-    // mutator atribut MasaKerja
-    public void setMasaKerja(){
-        LocalDate tgl_form = LocalDate.parse(this.TMT, tanggalID);
-        Period hitungMasaKerja = Period.between(tgl_form, LocalDate.now());
-        String MasaKerja = hitungMasaKerja.getYears() + " tahun " + hitungMasaKerja.getMonths() + " bulan ";
-        this.MasaKerja = MasaKerja;
-    }
-
-     // mutator atribut Tanggal Pensiun
-    public void setTglPensiun(){}
-
-    // mutator atribut GajiPokok
-    public void setGajiPokok(double GajiPokok){
-        this.GajiPokok = GajiPokok;
-    }
-
-    // mutator atribut Tunjangan
-    public void setTunjangan(){}
-
-
     /* METHOD LAINNYA */
-
     // method untuk menampilkan format untuk atribut GajiPokok
     public void printGajiPokok(){
         DecimalFormatSymbols simbol = new DecimalFormatSymbols();
@@ -153,20 +161,14 @@ public class Pegawai{
         System.out.println("Tunjangan       : " + Tunjangan);  
     }
 
-    // mutator atribut BUP
-    public void setBUP(int BUP){
-        if(BUP == 65 || BUP == 55){
-            this.BUP = BUP;
-        } else{
-            this.BUP = 0;
-        }
-    }
-
-    // method tambahan untuk menampilkan NIDN dan NIDK subclass Dosen
+    // method untuk menampilkan NIDN dan NIDK subclass Dosen
     public void printInfoNID(){}
 
-    // method tambahan untuk menampilkan info subclass
+    // method untuk menampilkan Bidang (subclass Tendik) atau Fakultas (subclass Dosen) 
     public void printInfoPos(){}
+
+    // method untuk menampilkan MasaKontrak subclass Dosen Tamu
+    public void printInfoKontrak(){}
 
     // method untuk menampilkan info atau detail superclass Pegawai
     public void printInfo(){
@@ -178,6 +180,7 @@ public class Pegawai{
         System.out.println("Jabatan         : " + Jabatan);
         printInfoPos();
         System.out.println("Masa Kerja      : " + MasaKerja);
+        printInfoKontrak();
         System.out.println("Tanggal Pensiun : " + TglPensiun);
         printGajiPokok();
         printTunjangan();
