@@ -1,39 +1,29 @@
 /* Nama file    : Pegawai.java
- * Deskripsi    : program class Pegawai
+ * Deskripsi    : program class Pegawai berisi atribut dan method
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 13 Maret 2026
 */
 
-// library untuk format tanggal
-import java.time.LocalDate;
-
 public class Pegawai {
     /* ATRIBUT */
-    protected String NIP;
-    protected String Nama;
-    protected LocalDate TglLahir;
-    protected LocalDate TMT;
-    protected double GajiPokok;
+    private String NIP;
+    private String Nama;
+    private String TglLahir;
+    private String TMT;
+    private String Jabatan;
+    private String MasaKerja;
+    private String TglPensiun;
+    private String GajiPokok;
+    private String Tunjangan;
+    private int BUP;
 
     /* METHOD */
-    // konstruktor tanpa parameter
+    /* KONSTRUKTOR */
+    // konstruktor
     public Pegawai(){
-        this.NIP = "-";
-        this.Nama = "-";
-        this.TglLahir = null;
-        this.TMT = null;
-        this.GajiPokok = 0;
     }
 
-    // konstruktor dengan parameter
-    public Pegawai(String NIP, String Nama, LocalDate TglLahir, LocalDate TMT, double GajiPokok){
-        this.NIP = NIP;
-        this.Nama = Nama;
-        this.TglLahir = TglLahir;
-        this.TMT = TMT;
-        this.GajiPokok = GajiPokok;
-    }
-
+    /* SELEKTOR */
     // selektor atribut NIP
     public String getNIP(){
         return NIP;
@@ -45,20 +35,47 @@ public class Pegawai {
     }
 
     // selektor atribut TglLahir
-    public LocalDate getTglLahir(){
+    public String getTglLahir(){
         return TglLahir;
     }
 
     // selektor atribut TMT
-    public LocalDate getTMT(){
+    public String getTMT(){
         return TMT;
     } 
 
-    // selektor atribut gaji pokok
-    public double getGajiPokok(){
+    // selektor atribut Jabatan
+    public String getJabatan(){
+        return Jabatan;
+    }
+
+    // selektor atribut MasaKerja
+    public String getMasaKerja(){
+        return MasaKerja;
+    }
+
+    // selektor atirbut TglPensiun
+    public String getTglPensiun(){
+        return TglPensiun;
+    }
+
+    // selektor atribut Gaji Pokok
+    public String getGajiPokok(){
         return GajiPokok;
     }
 
+    // selektor atribut Tunjangan
+    public String getTunjangan(){
+        return Tunjangan;
+    }
+
+    // selektor atribut BUP
+    public int getBUP(){
+        return BUP;
+    }
+
+
+    /* MUTATOR */
     // mutator atribut NIP
     public void setNIP(String NIP){
         this.NIP = NIP;
@@ -70,27 +87,50 @@ public class Pegawai {
     }
 
     // mutator atribut TglLahir
-    public void setTglLahir(LocalDate TglLahir){
+    public void setTglLahir(String TglLahir){
         this.TglLahir = TglLahir;
     }
 
     // mutator atribut TMT
-    public void setTMT(LocalDate TMT){
+    public void setTMT(String TMT){
         this.TMT = TMT;
     }
 
+    // mutator atribut Jabatan
+    public void setJabatan(String Jabatan){
+        if(Jabatan == "Tendik" || Jabatan == "Dosen Tetap" || Jabatan == "Dosen Tamu"){
+            this.Jabatan = Jabatan;
+        } else{
+            this.Jabatan = "-";
+        }
+    }
+
     // mutator atribut GajiPokok
-    public void setGajiPokok(double GajiPokok){
+    public void setGajiPokok(String GajiPokok){
         this.GajiPokok = GajiPokok;
     }
 
-    // method untuk menampilkan info atau detail class
+    // mutator atribut BUP
+    public void setBUP(int BUP){
+        if(BUP == 65 || BUP == 55){
+            this.BUP = BUP;
+        } else{
+            this.BUP = 0;
+        }
+    }
+
+
+    // method untuk menampilkan info atau detail class Pegawai
     public void printInfo(){
         System.out.println("NIP: " + NIP);
         System.out.println("Nama: " + Nama);
-        System.out.println("TglLahir: " + TglLahir);
+        System.out.println("Tanggal Lahir: " + TglLahir);
         System.out.println("TMT: " + TMT);
+        System.out.println("Jabatan: " + Jabatan);
+        System.out.println("Masa Kerja: " + MasaKerja);
+        System.out.println("Tanggal Pensiun: " + TglPensiun);
         System.out.println("Gaji Pokok: " + GajiPokok);
+        System.out.println("Tunjangan: " + Tunjangan);
     }
 
 
