@@ -13,4 +13,5 @@ public interface IResize{
     // menskalakan ukuran sesuai dengan input percent yang diberikan
     public void zoom(int percent);
         
+
 }
