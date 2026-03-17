@@ -19,11 +19,17 @@ public class MBangunDatar{
         System.out.println("Keliling L1 = Keliling L2? " + L1.isEqualKel(L2));
         System.out.println("");
 
-        P1.zoomIn();
-        P2.zoomOut();
+        P1.zoomOut();
+        P2.zoomIn();
+        System.out.println("Panjang sisi P1: " + ((Persegi) P1).getSisi());
+        System.out.println("Panjang sisi P2: " + P2.getSisi());
+        P1.zoom(70);
+        P2.zoom(90);
         System.out.println("Panjang sisi P1: " + ((Persegi) P1).getSisi());
         System.out.println("Panjang sisi P2: " + P2.getSisi());
 
         
     }
+
+    
 }

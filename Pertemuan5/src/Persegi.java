@@ -8,6 +8,7 @@ public class Persegi extends BangunDatar{
     private double sisi;
 
     /* METHOD */
+    /* KONSTRUKTOR */
     // konstruktor bangun datar persegi dengan jumlah sisi 4
     public Persegi(int pSisi){
         setJmlSisi(4);
@@ -22,16 +23,22 @@ public class Persegi extends BangunDatar{
         } 
     }
 
-    // method selektor sisi persegi
-    public double getSisi(){
-        return sisi;
-    }
 
+    /* MUTATOR */
     // method mutator sisi persegi
     public void setSisi(double xSisi){
         this.sisi = xSisi;
     }
 
+
+    /* SELEKTOR */
+    // method selektor sisi persegi
+    public double getSisi(){
+        return sisi;
+    }
+
+    
+    /* METHOD LAINNYA */
     // method untuk menghitung luas persegi
     public double getLuas(){
         return sisi * sisi;
@@ -72,5 +79,5 @@ public class Persegi extends BangunDatar{
         System.out.println("Sisi: " + sisi);
     }
 
-
+    
 }

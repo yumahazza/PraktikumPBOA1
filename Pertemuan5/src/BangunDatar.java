@@ -17,7 +17,7 @@ public abstract class BangunDatar implements IResize{
         counterBD++;
     }
     
-    // konstruktordengan parameter
+    // konstruktor dengan parameter
     public BangunDatar(int jmlSisi, String warna, String border){
         this.jmlSisi = jmlSisi;
         this.warna = warna;
@@ -90,4 +90,6 @@ public abstract class BangunDatar implements IResize{
     public static void printCounterBD(){
         System.out.println("Jumlah objek bangun datar: " + counterBD);
     }
+
+    
 }
