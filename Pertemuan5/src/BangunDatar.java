@@ -3,19 +3,21 @@
 // Pembuat      : Yuma Hazza Yuditama
 // Tanggal      : 17 Maret 2026
 
-public class BangunDatar {
+public abstract class BangunDatar implements IResize{
     /* ATRIBUT */
-    private int jmlSisi;
-    private String warna;
-    private String border;
-    private static int counterBD = 0;
+    protected int jmlSisi;
+    protected String warna;
+    protected String border;
+    protected static int counterBD = 0;
 
     /* METHOD */
-    // Konstruktor
+    /* KONSTRUKTOR */
+    // konstruktor tanpa parameter
     public BangunDatar(){
         counterBD++;
     }
-
+    
+    // konstruktordengan parameter
     public BangunDatar(int jmlSisi, String warna, String border){
         this.jmlSisi = jmlSisi;
         this.warna = warna;
@@ -23,14 +25,28 @@ public class BangunDatar {
         counterBD++;
     }
 
+
+    /* MUTATOR */
+    // method mutator jumlah sisi
+    public void setJmlSisi(int Sisi){
+        this.jmlSisi = Sisi;
+    }
+
+    // method mutator warna
+    public void setWarna(String Warna){
+        this.warna = Warna;
+    }
+
+    // method mutator border
+    public void setBorder(String Border){
+        this.border = Border;
+    }
+
+
+    /* SELEKTOR */
     // method selektor jumlah sisi
     public int getJumlSisi(){
         return jmlSisi;
-    }
-
-    // method mutator jumlah sisi
-    public void setJmlSisi(int xSisi){
-        this.jmlSisi = xSisi;
     }
 
     // method selektor warna
@@ -38,19 +54,29 @@ public class BangunDatar {
         return warna;
     }
 
-    // method mutator warna
-    public void setWarna(String xWarna){
-        this.warna = xWarna;
-    }
-
     // method selektor border
     public String getBorder(){
         return border;
     }
 
-    // method mutator border
-    public void setBorder(String xBorder){
-        this.border = xBorder;
+
+    /* METHOD LAINNYA */
+    // method hitung luas
+    public abstract double getLuas();
+
+    // method hitung keliling
+    public abstract double getKeliling();
+
+    // method untuk mengecek apakah sebuah objek bangun datar
+    // memiliki luas yang sama dengan bangun datar lainnya
+    public boolean isEqualLuas(BangunDatar X){
+        return this.getLuas() == X.getLuas();
+    }
+
+    // method untuk mengecek apakah sebuah objek bangun datar
+    // memiliki keliling yang sama dengan bangun datar lainnya
+    public boolean isEqualKel(BangunDatar X){
+        return this.getKeliling() == X.getKeliling();
     }
 
     // method menampilkan info bangun datar
@@ -60,8 +86,8 @@ public class BangunDatar {
         System.out.println("Border: " + border);
     }
 
+    // method counter bangun datar
     public static void printCounterBD(){
         System.out.println("Jumlah objek bangun datar: " + counterBD);
     }
 }
-

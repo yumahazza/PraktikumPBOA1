@@ -5,23 +5,21 @@
 
 public class Persegi extends BangunDatar{
     /* ATRIBUT */
-    protected double sisi;
+    private double sisi;
 
     /* METHOD */
     // konstruktor bangun datar persegi dengan jumlah sisi 4
-    public Persegi(){
+    public Persegi(int pSisi){
         setJmlSisi(4);
+        this.sisi = pSisi;
     }
 
     // konstruktor bangun datar persegi dengan parameter
-    public Persegi(double xSisi, String warna, String border){
+    public Persegi(double pSisi, String warna, String border){
         super(4, warna, border);
-        if(xSisi == 4){
-            this.sisi = xSisi;
-        }
-        // setWarna(warna);
-        // setBorder(border);
-        // setJmlSisi(4); 
+        if(pSisi == 4){
+            this.sisi = pSisi;
+        } 
     }
 
     // method selektor sisi persegi
@@ -47,6 +45,24 @@ public class Persegi extends BangunDatar{
     // method untuk menghitung diagonal persegi
     public double getDiagonal(){
         return sisi * Math.sqrt(2);
+    }
+
+    // method menambah ukuran menjadi 10% lebih besar
+    @Override
+    public void zoomIn(){
+        sisi = sisi * 1.1;
+    }
+
+    // method menambah ukuran menjadi 10% lebih kecil
+    @Override
+    public void zoomOut(){
+        sisi = sisi * 0.9;
+    }
+
+    // method menambah ukuran menjadi 10% lebih besar
+    @Override
+    public void zoom(int percent){
+        sisi = sisi * percent / 100;
     }
 
     // method menampilkan info persegi

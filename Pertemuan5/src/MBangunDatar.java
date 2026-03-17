@@ -5,23 +5,25 @@
 
 public class MBangunDatar{
     public static void main (String[] args){
-        Persegi Persegi1 = new Persegi(4, "biru", "hitam");
-        Lingkaran Lingkaran1 = new Lingkaran(14, "pink", "hitam");
-        BangunDatar Wow = new BangunDatar();
-        
-        Persegi1.printInfo();
-        System.out.println("");
-        Lingkaran1.printInfo();
-        System.out.println("");
+        /* OBJEK */
+        // tidak bisa instansiasi langsung 
+        // BangunDatar B1 = new BangunDatar();
 
-        System.out.println("Keliling Persegi1 : " + Persegi1.getKeliling());
-        System.out.println("Luas Persegi1 : " + Persegi1.getLuas());
+        BangunDatar P1 = new Persegi(10);
+        Persegi P2 = new Persegi(5);
+        BangunDatar L1 = new Lingkaran(7);
+        Lingkaran L2 = new Lingkaran(14);
 
-        System.out.println("Keliling Lingkaran1 : " + Lingkaran1.getKeliling());
-        System.out.println("Luas Lingkaran1 : " + Lingkaran1.getLuas());
+        /* APLIKASI */
+        System.out.println("Luas P1 = Luas P2? " + P1.isEqualLuas(P2));
+        System.out.println("Keliling L1 = Keliling L2? " + L1.isEqualKel(L2));
         System.out.println("");
 
-        Wow.printCounterBD();
+        P1.zoomIn();
+        P2.zoomOut();
+        System.out.println("Panjang sisi P1: " + ((Persegi) P1).getSisi());
+        System.out.println("Panjang sisi P2: " + P2.getSisi());
+
         
     }
 }
