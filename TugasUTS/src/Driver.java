@@ -22,14 +22,14 @@ public class Driver extends Person{
         System.out.println("No. HP  : " + noHp);
         System.out.println("No. SIM : " + noSIM);
         if (rating == 0.0) {
-            System.out.println("Rating : N/A");
+            System.out.println("Rating  : N/A");
         } else {
-            System.out.println("Rating : " + rating);
+            System.out.println("Rating  : " + rating);
         }
         if (tersedia) {
-            System.out.println("Status : Tersedia");
+            System.out.println("Status  : Tersedia");
         } else {
-            System.out.println("Status : Sedang Bertugas");
+            System.out.println("Status  : Sedang Bertugas");
         }
     }
 

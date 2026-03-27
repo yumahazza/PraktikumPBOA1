@@ -10,8 +10,11 @@ public class Motor extends Kendaraan{
 
     /* METHOD */
     /* KONSTRUKTOR */
+    // konstruktor dengan parameter
     protected Motor(Driver driver, String PlatNomor, String Model){
-        super(driver, PlatNomor, "Motor", Model, 2);
+        super(driver, PlatNomor, "Motor", Model);
+        this.kapasitas = 2;
+        this.tarifKendaraan = 1.1;
     }
 
     /* SELEKTOR */

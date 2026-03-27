@@ -3,27 +3,19 @@
 public class Perjalanan{
     /***********ATRIBUT************/
     protected String idPerjalanan;
-    protected int jarak;
-    protected int tarifKendaraan; //tarif dasar; motor sekian, mobil sekian
+    protected double jarak;
     protected Motor motor;
     protected Mobil mobil;
 
     /***********METHOD************/
     // Konstruktor untuk membuat Perjalanan dengan parameter idPerjalanan dan jarak
-    public Perjalanan(String idPerjalanan, int jarak, int tarifKendaraan) {
+    public Perjalanan(String idPerjalanan, double jarak) {
         this.idPerjalanan = idPerjalanan;
         this.jarak = jarak;
-        this.tarifKendaraan = tarifKendaraan;
-    }
-
-    public Perjalanan(){
-        idPerjalanan = "";
-        jarak = 0;
-        tarifKendaraan = 0;
     }
  
     // Mengeset jarak agar tidak memasukkan nilai negatif. hal ini memanfaatkan konsep exception
-    public void setJarak(int jarak) throws IllegalArgumentException {
+    public void setJarak(double jarak) throws IllegalArgumentException {
         if (jarak <= 0) {
             throw new IllegalArgumentException("Jarak harus lebih dari 0!");
         }
@@ -31,7 +23,7 @@ public class Perjalanan{
     }
 
     // mengambil info jarak
-    public int getJarak() {
+    public double getJarak() {
         return jarak;
     }
 
@@ -44,38 +36,31 @@ public class Perjalanan{
         idPerjalanan = id;
     }
 
-    public void setTarifKendaraan(int tarifKendaraan){
-        this.tarifKendaraan = tarifKendaraan;
-    }
-
-    public int getTarifKendaraan(){
-        return tarifKendaraan;
-    }
-
     // Menghitung tarifKendaraan dari perjalanan dengan asumsi setiap jarak dalam satu kilometer di hargai dengan 2000
-    public int hitungTarif(){
+    public double hitungTarif(){
         // assertion
         int hargaPerKm = 2000; // asumsi harga per km secara default
+        double tarifK;
         assert jarak > 0 : "Jarak tidak valid!";
-        
+
         if(motor.jenis.equals("Motor")){
-            hargaPerKm = 2000;
+            tarifK = motor.getTarif();
         }
         else{
             if(mobil.getTipeMobil().equals("Reguler")){
-                hargaPerKm = 4000;
+                tarifK = mobil.getTarif();
             } else{
-                hargaPerKm = 6000;
+                tarifK = mobil.getTarif();
             }
         }
 
-        int tarif = (jarak * hargaPerKm) + getTarifKendaraan();
+        double tarif = jarak * hargaPerKm * tarifK;
         return tarif;
     }
 
     public void printInfo() {
         System.out.println("ID Perjalanan : " + getIDPerjalanan());
         System.out.println("Jarak         : " + getJarak() + " km");
-        System.out.println("Total tarif dalam perjalanan   : " + hitungTarif());
+        System.out.println("Total tarif   : " + hitungTarif());
     }
 }

@@ -11,38 +11,31 @@ public class Mobil extends Kendaraan{
     
     /* METHOD */
     /* KONSTRUKTOR */
-    // konstruktor tanpa parameter
-    protected Mobil(){
-        // Asumsi, secara default tipe mobil reguler dengan kapasitas 4 penumpang
-        setDriver(getDriver());
-        setJenis("Mobil");
-        setKapasitas(4);
-        setModel("-");
-        setPlatNomor("-");
-        setTipeMobil("Reguler");
-    }
-
     // konstruktor dengan parameter
-    protected Mobil(Driver driver, String PlatNomor, String Model, String tipe_mobil){
-        super(driver, PlatNomor, "Mobil", Model, 0);
+    protected Mobil(Driver driver, String PlatNomor, String Model, String TipeMobil){
+        super(driver, PlatNomor, "Mobil", Model);
 
-        if(!tipe_mobil.equals("Reguler") && !tipe_mobil.equals("Deluxe")){
+        if(!TipeMobil.equals("Reguler") && !TipeMobil.equals("Deluxe")){
             throw new IllegalArgumentException("Tipe mobil harus Reguler atau Deluxe!");
         }
 
-        this.tipeMobil = tipe_mobil;
+        this.tipeMobil = TipeMobil;
 
-        if(tipe_mobil.equals("Reguler")){
+        if(TipeMobil.equals("Reguler")){
             this.kapasitas = 4;
+            this.tarifKendaraan = 1.2;
         } else{
             this.kapasitas = 7;
+            this.tarifKendaraan = 1.4;
         }
     }
+
 
     /* SELEKTOR */
     public String getTipeMobil(){
         return tipeMobil;
     }
+
 
     /* MUTATOR */
     public void setTipeMobil(String tipe_mobil){
@@ -59,10 +52,10 @@ public class Mobil extends Kendaraan{
         }
     }
 
+
     /* METHOD LAINNYA */
     @Override
-    public void printInfo(){
-        super.printInfo();
-        System.out.println("Tipe            : " + tipeMobil);
+    public void infoTipeMobil(){
+        System.out.println("Tipe            : " + getTipeMobil());
     }
 }

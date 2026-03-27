@@ -7,30 +7,21 @@
 
 public class Kendaraan{
     /********** ATRIBUT **********/
+    private Driver driver;
     protected String platNomor;
     protected String jenis;
     protected String model;
     protected int kapasitas;
-    private Driver driver;
+    protected double tarifKendaraan;
 
     /********** METHOD **********/
     /* KONSTRUKTOR */
-    // konstruktor tanpa paremeter
-    protected Kendaraan(){
-        this.driver = null;
-        this.platNomor = null;
-        this.model = null;
-        this.jenis = null;
-        this.kapasitas = 0;
-    }
-
     // konstruktor dengan parameter
-    protected Kendaraan(Driver driver_ojek, String PlatNomor, String Jenis, String Model, int Kapasitas){
+    protected Kendaraan(Driver pDriver, String PlatNomor, String Jenis, String Model){
+        this.driver = pDriver;
         this.platNomor = PlatNomor;
         this.jenis = Jenis;
         this.model = Model;
-        this.kapasitas = Kapasitas;
-        this.driver = driver_ojek;
     }
 
 
@@ -60,9 +51,15 @@ public class Kendaraan{
         return kapasitas;
     }
 
+    // selektor atribut tarifKendaraan
+    public double getTarif(){
+        return tarifKendaraan;
+    }
+
 
     /* MUTATOR */
     // mutator atribut driver
+    // asumsi driver boleh ganti username
     public void setDriver(Driver driver_ojek){
         this.driver = driver_ojek;
     }
@@ -87,12 +84,20 @@ public class Kendaraan{
         this.kapasitas = Kapasitas;
     }
 
+    // mutator atribut tarifKendaraan
+    public void setTarif(double Tarif){
+        this.tarifKendaraan = Tarif;
+    }
+
     /* METHOD LAINNYA */
+    public void infoTipeMobil(){}
+
     public void printInfo(){
-        System.out.println("Nama Driver     : " + driver.nama);
-        System.out.println("Plat Nomor      : " + platNomor);
-        System.out.println("Jenis Kendaraan : " + jenis);
-        System.out.println("Model           : " + model);
-        System.out.println("Kapasitas       : " + kapasitas);
+        System.out.println("Nama Driver     : " + getDriver().nama);
+        System.out.println("Plat Nomor      : " + getPlatNomor());
+        System.out.println("Jenis Kendaraan : " + getJenis());
+        infoTipeMobil();
+        System.out.println("Model           : " + getModel());
+        System.out.println("Kapasitas       : " + getKapasitas());
     }
 }
