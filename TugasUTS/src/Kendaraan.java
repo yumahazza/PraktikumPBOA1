@@ -65,7 +65,11 @@ public class Kendaraan{
         this.kapasitas = Kapasitas;
     }
 
-
-
     /* METHOD LAINNYA */
+    public void printInfo(){
+        System.out.println("Plat Nomor      : " + platNomor);
+        System.out.println("Jenis Kendaraan : " + jenis);
+        System.out.println("Model           : " + model);
+        System.out.println("Kapasitas       : " + kapasitas);
+    }
 }

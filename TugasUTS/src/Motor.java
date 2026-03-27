@@ -7,11 +7,17 @@
 
 public class Motor extends Kendaraan{
     /* ATRIBUT */
-    
+
     /* METHOD */
     /* KONSTRUKTOR */
-    public Motor(String PlatNomor, String Model, int Kapasitas){
+    public Motor(String PlatNomor, String Model){
         super(PlatNomor, "Motor", Model, 2);
-
     }
+
+    /* SELEKTOR */
+
+
+    /* MUTATOR */
+
+
 }
