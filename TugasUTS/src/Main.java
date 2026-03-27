@@ -53,5 +53,13 @@ public class Main{
 
         // Data Perjalanan
         System.out.println("=====DATA PERJALANAN=====");
+        go1.printInfo();
+        System.out.println();
+        go2.printInfo();
+        System.out.println();
+        go3.printInfo();
+        System.out.println();
+        go4.printInfo();
+        System.out.println();
     }
 }
