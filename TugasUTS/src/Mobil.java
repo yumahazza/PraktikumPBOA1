@@ -11,7 +11,7 @@ public class Mobil extends Kendaraan{
     
     /* METHOD */
     /* KONSTRUKTOR */
-    public Mobil(String PlatNomor, String Model, String tipe_mobil){
+    protected Mobil(String PlatNomor, String Model, String tipe_mobil){
         super(PlatNomor, "Mobil", Model, 0);
         if(tipe_mobil == "Reguler"){
             this.tipeMobil = tipe_mobil;

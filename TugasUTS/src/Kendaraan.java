@@ -14,7 +14,7 @@ public class Kendaraan{
 
     /* METHOD */
     /* KONSTRUKTOR */
-    public Kendaraan(String PlatNomor, String Jenis, String Model, int Kapasitas){
+    protected Kendaraan(String PlatNomor, String Jenis, String Model, int Kapasitas){
         this.platNomor = PlatNomor;
         this.jenis = Jenis;
         this.model = Model;
