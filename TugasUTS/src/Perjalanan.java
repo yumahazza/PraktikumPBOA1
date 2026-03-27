@@ -2,16 +2,21 @@
 
 public class Perjalanan{
     /***********ATRIBUT************/
-    protected String idPerjalanan;
-    protected double jarak;
-    protected Motor motor;
-    protected Mobil mobil;
+    private String idPerjalanan;
+    private double jarak;
+    private Kendaraan kendaraan;
+    private Driver driver;
+    private Penumpang penumpang;
+
 
     /***********METHOD************/
     // Konstruktor untuk membuat Perjalanan dengan parameter idPerjalanan dan jarak
-    public Perjalanan(String idPerjalanan, double jarak) {
+    public Perjalanan(String idPerjalanan, double jarak, Penumpang p, Driver d, Kendaraan k) {
         this.idPerjalanan = idPerjalanan;
         this.jarak = jarak;
+        this.penumpang = p;
+        this.driver = d;
+        this.kendaraan = k;
     }
  
     // Mengeset jarak agar tidak memasukkan nilai negatif. hal ini memanfaatkan konsep exception
@@ -23,7 +28,7 @@ public class Perjalanan{
     }
 
     // mengambil info jarak
-    public double getJarak() {
+    public double getJarak(){
         return jarak;
     }
 
@@ -38,29 +43,24 @@ public class Perjalanan{
 
     // Menghitung tarifKendaraan dari perjalanan dengan asumsi setiap jarak dalam satu kilometer di hargai dengan 2000
     public double hitungTarif(){
-        // assertion
         int hargaPerKm = 2000; // asumsi harga per km secara default
-        double tarifK;
+        // assertion
         assert jarak > 0 : "Jarak tidak valid!";
+        double tarif = (jarak * hargaPerKm) + kendaraan.getTarif() + kendaraan.getPajak();
 
-        if(motor.jenis.equals("Motor")){
-            tarifK = motor.getTarif();
-        }
-        else{
-            if(mobil.getTipeMobil().equals("Reguler")){
-                tarifK = mobil.getTarif();
-            } else{
-                tarifK = mobil.getTarif();
-            }
-        }
-
-        double tarif = jarak * hargaPerKm * tarifK;
         return tarif;
     }
 
     public void printInfo() {
         System.out.println("ID Perjalanan : " + getIDPerjalanan());
+        System.out.println("Penumpang     : " + penumpang.nama);
+        System.out.println("Driver        : " + driver.nama);
+        System.out.println("Kendaraan     : " + kendaraan.jenis + " - " + kendaraan.model);
+        if(kendaraan instanceof Mobil){
+            Mobil mobil = (Mobil) kendaraan;
+            System.out.println("Tipe Mobil    : " + mobil.getTipeMobil());
+        }
         System.out.println("Jarak         : " + getJarak() + " km");
-        System.out.println("Total tarif   : " + hitungTarif());
+        System.out.printf("Total tarif   : %.2f\n", hitungTarif());
     }
 }

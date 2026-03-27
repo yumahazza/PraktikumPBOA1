@@ -14,13 +14,15 @@ public class Main{
         Motor motor2 = new Motor(d2, "H 1155 IR", "PCX");
         Mobil mobil1 = new Mobil(d3, "H 3727 AMG", "Toyota Innova", "Deluxe");
         Mobil mobil2 = new Mobil(d4, "H 4218 KLI", "Honda Jazz", "Reguler");
-        Perjalanan go1 = new Perjalanan("GO001", 5.0);
-        Perjalanan go2 = new Perjalanan("GO002", 3.5);
-        Perjalanan go3 = new Perjalanan("GO001", 7.8);
-        Perjalanan go4 = new Perjalanan("GO001", 12.2);
+        // mobil1.setTipeMobil("Box");
+        
+        Perjalanan go1 = new Perjalanan("GO001", 8, p1, d1, motor1);
+        Perjalanan go2 = new Perjalanan("GO002", 10, p2, d2, motor2);
+        Perjalanan go3 = new Perjalanan("GO001", 8, p3, d3, mobil1);
+        Perjalanan go4 = new Perjalanan("GO001", 8, p4, d4, mobil2);
 
         // Data Penumpang
-        System.out.println("=====DATA PEENUMPANG=====");
+        System.out.println("=====DATA PENENUMPANG=====");
         p1.displayInfo();
         System.out.println();
         p2.displayInfo();
@@ -50,8 +52,17 @@ public class Main{
         mobil1.printInfo();
         System.out.println();
         mobil2.printInfo();
+        System.out.println();
 
         // Data Perjalanan
         System.out.println("=====DATA PERJALANAN=====");
+        go1.printInfo();
+        System.out.println();
+        go2.printInfo();
+        System.out.println();
+        go3.printInfo();
+        System.out.println();
+        go4.printInfo();
+        System.out.println();
     }
 }

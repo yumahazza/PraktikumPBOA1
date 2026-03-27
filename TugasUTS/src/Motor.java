@@ -14,13 +14,18 @@ public class Motor extends Kendaraan{
     protected Motor(Driver driver, String PlatNomor, String Model){
         super(driver, PlatNomor, "Motor", Model);
         this.kapasitas = 2;
-        this.tarifKendaraan = 1.1;
+        this.tarifKendaraan = 2000;
     }
 
     /* SELEKTOR */
 
-
     /* MUTATOR */
 
+    /* METHOD LAINNYA */
+    @Override
+    public double getPajak(){
+        return tarifKendaraan * 1.1;
+    }
 
+    
 }
