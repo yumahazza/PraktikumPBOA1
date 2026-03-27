@@ -1,4 +1,6 @@
-public class Driver extends Person {
+/* Nama file    : Driver.java */
+
+public class Driver extends Person{
     private String noSIM;
     private boolean tersedia;
     private double rating;

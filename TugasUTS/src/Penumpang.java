@@ -1,3 +1,5 @@
+/* Nama file    : Penumpang.java */
+
 public class Penumpang extends Person{
     private String alamat;
 
@@ -6,7 +8,6 @@ public class Penumpang extends Person{
         this.alamat = alamat;
     }
 
-    // Override displayInfo() dari Person
     @Override
     public void displayInfo() {
         System.out.println("ID        : " + id);

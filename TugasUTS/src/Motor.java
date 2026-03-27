@@ -10,8 +10,8 @@ public class Motor extends Kendaraan{
 
     /* METHOD */
     /* KONSTRUKTOR */
-    protected Motor(String PlatNomor, String Model){
-        super(PlatNomor, "Motor", Model, 2);
+    protected Motor(Driver driver, String PlatNomor, String Model){
+        super(driver, PlatNomor, "Motor", Model, 2);
     }
 
     /* SELEKTOR */

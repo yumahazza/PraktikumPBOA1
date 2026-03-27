@@ -1,3 +1,5 @@
+/* Nama file    : Person.java */
+
 public abstract class Person{
     protected String id;
     protected String nama;
