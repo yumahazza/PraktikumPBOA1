@@ -1,4 +1,9 @@
-//Class Voucher
+/* Nama file    : Voucher.java
+ * Deskripsi    : program class Voucher
+ * Pembuat      : Shalom Kurniawan
+ * NIM          : 24060124120033
+ * Tanggal      : 27 Maret 2026
+ * */
 
 public class Voucher {
     /***********ATRIBUT************/
@@ -20,18 +25,22 @@ public class Voucher {
         sudahDipakai = false;
     }
 
-    // mengambil info kode voucher
+    /* SELEKTOR */
     public String getKodeVoucher() {
         return kodeVoucher;
     }
-
-    public void setKodeVoucher(String kode){
-        kodeVoucher = kode;
+    
+    public double getDiskon(){
+        return diskon;
     }
 
-    // mengambil info diskon
-    public double getDiskon() {
-        return diskon;
+    public boolean getSudahDipakai(){
+        return sudahDipakai;
+    }
+
+    /* MUTATOR */
+    public void setKodeVoucher(String kode){
+        kodeVoucher = kode;
     }
 
     public void setDiskon(double diskon){
@@ -42,13 +51,10 @@ public class Voucher {
         sudahDipakai = status;
     }
 
-    public boolean getSudahDipakai(){
-        return sudahDipakai;
-    }
-
-    // sistem untuk menggunakan voucher
-    public void gunakanVoucher() {
-        if (!sudahDipakai) { //sudahDipakai == false
+    /* METHOD LAINNYA */
+    // method untuk menggunakan voucher
+    public void gunakanVoucher(){
+        if(!sudahDipakai){ //sudahDipakai == false
             sudahDipakai = true;
             System.out.println("Voucher " + kodeVoucher + " berhasil digunakan.");
         } else {
@@ -56,10 +62,12 @@ public class Voucher {
         }
     }
 
-   // mencetak info dari voucher
-    public void printInfo() {
+    // method untuk mencetak info dari voucher
+    public void printInfo(){
         System.out.println("Kode Voucher : " + kodeVoucher);
         System.out.println("Diskon       : " + (diskon * 100) + "%");
         System.out.println("Status       : " + (sudahDipakai ? "Sudah dipakai" : "Belum dipakai"));
     }
+
+    
 }

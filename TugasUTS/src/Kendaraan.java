@@ -5,7 +5,7 @@
  * Tanggal      : 26 Maret 2026
  * */
 
-public abstract class Kendaraan implements Pajak{
+public class Kendaraan{
     /********** ATRIBUT **********/
     private Driver driver;
     protected String platNomor;
@@ -16,108 +16,74 @@ public abstract class Kendaraan implements Pajak{
 
     /********** METHOD **********/
     /* KONSTRUKTOR */
-    // konstruktor tanpa parameter
-    protected Kendaraan(){
-        this.driver = null;
-        this.platNomor = null;
-        this.jenis = null;
-        this.model = null;
-        this.kapasitas = 0;
-        this.tarifKendaraan = 0;
-    }
-
-    // konstruktor dengan parameter
-    protected Kendaraan(Driver pDriver, String PlatNomor, String Jenis, String Model){
-        this.driver = pDriver;
+    public Kendaraan(Driver driver, String PlatNomor, String Jenis, String Model, int Kapasitas){
+        this.driver = driver;
         this.platNomor = PlatNomor;
         this.jenis = Jenis;
         this.model = Model;
+        this.kapasitas = Kapasitas;
+    }
+
+    public Kendaraan(){
+        driver = null;
+        platNomor = "";
+        jenis = "";
+        model = "";
+        kapasitas = 0;
     }
 
 
     /* SELEKTOR */
-    // selektor atribut driver
-    public Driver getDriver(){
-        return driver;
-    }
-
-    // selektor atribut platNomor
     public String getPlatNomor(){
         return platNomor;
     }
 
-    // selektor atribut jenis
     public String getJenis(){
         return jenis;
     }
 
-    // selektor atribut model
     public String getModel(){
         return model;
     }
 
-    // selektor atribut kapasitas
     public int getKapasitas(){
         return kapasitas;
     }
 
-    // selektor atribut tarifKendaraan
-    public int getTarif(){
+    public int getTarifKendaraan(){
         return tarifKendaraan;
     }
 
-
     /* MUTATOR */
-    // mutator atribut driver
-    // asumsi driver boleh ganti username
-    public void setDriver(Driver driver_ojek){
-        this.driver = driver_ojek;
-    }
-
-    // mutator atribut platNomor
     public void setPlatNomor(String PlatNomor){
         this.platNomor = PlatNomor;
     }
 
-    // mutator atribut jenis
     public void setJenis(String Jenis){
         this.jenis = Jenis;
     }
 
-    // mutator atribut model
     public void setModel(String Model){
         this.model = Model;
     }
 
-    // mutator atribut kapasitas
     public void setKapasitas(int Kapasitas){
         this.kapasitas = Kapasitas;
     }
 
-    // mutator atribut tarifKendaraan
-    public void setTarif(int Tarif){
-        this.tarifKendaraan = Tarif;
+    public void setTarifKendaraan(int tarif){
+        tarifKendaraan = tarif;
     }
-
 
     /* METHOD LAINNYA */
-    // menghitung pajak
-    public double getPajak(){
-        return 0;
-    }
-
-    // menampilkan info tipeMobil khusus class Mobil
     public void infoTipeMobil(){}
-
-    // menampilkan info kendaraan
-    public void printInfo(){
-        System.out.println("Nama Driver     : " + getDriver().nama);
-        System.out.println("Plat Nomor      : " + getPlatNomor());
-        System.out.println("Jenis Kendaraan : " + getJenis());
-        infoTipeMobil();
-        System.out.println("Model           : " + getModel());
-        System.out.println("Kapasitas       : " + getKapasitas());
-    }
-
     
+    public void printInfo(){
+        System.out.println("Plat Nomor      : " + platNomor);
+        System.out.println("Jenis Kendaraan : " + jenis);
+        System.out.println("Model           : " + model);
+        infoTipeMobil();
+        System.out.println("Kapasitas       : " + kapasitas);
+        System.out.println("Tarif Kendaraan : " + tarifKendaraan);
+    }
 }

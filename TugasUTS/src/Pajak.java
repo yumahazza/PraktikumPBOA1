@@ -1,6 +1,5 @@
-// Class interface pajak
+//nama file: Pajak.java
 
 public interface Pajak {
-    /* METHOD */
-    double getPajak();
+   public double hitungPajak(); //anggap saja ppn 10%
 }
