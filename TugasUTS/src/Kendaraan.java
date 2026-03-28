@@ -16,6 +16,16 @@ public abstract class Kendaraan implements Pajak{
 
     /********** METHOD **********/
     /* KONSTRUKTOR */
+    // konstruktor tanpa parameter
+    protected Kendaraan(){
+        this.driver = null;
+        this.platNomor = null;
+        this.jenis = null;
+        this.model = null;
+        this.kapasitas = 0;
+        this.tarifKendaraan = 0;
+    }
+
     // konstruktor dengan parameter
     protected Kendaraan(Driver pDriver, String PlatNomor, String Jenis, String Model){
         this.driver = pDriver;
@@ -92,7 +102,9 @@ public abstract class Kendaraan implements Pajak{
 
     /* METHOD LAINNYA */
     // menghitung pajak
-    public abstract double getPajak();
+    public double getPajak(){
+        return 0;
+    }
 
     // menampilkan info tipeMobil khusus class Mobil
     public void infoTipeMobil(){}

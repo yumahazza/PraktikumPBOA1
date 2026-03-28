@@ -18,8 +18,8 @@ public class Main{
         
         Perjalanan go1 = new Perjalanan("GO001", 8, p1, d1, motor1);
         Perjalanan go2 = new Perjalanan("GO002", 10, p2, d2, motor2);
-        Perjalanan go3 = new Perjalanan("GO001", 8, p3, d3, mobil1);
-        Perjalanan go4 = new Perjalanan("GO001", 8, p4, d4, mobil2);
+        Perjalanan go3 = new Perjalanan("GO003", 8, p3, d3, mobil1);
+        Perjalanan go4 = new Perjalanan("GO004", 8, p4, d4, mobil2);
 
         // Data Penumpang
         System.out.println("=====DATA PENENUMPANG=====");
