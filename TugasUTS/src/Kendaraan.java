@@ -5,17 +5,27 @@
  * Tanggal      : 26 Maret 2026
  * */
 
-public class Kendaraan{
+public abstract class Kendaraan implements Pajak{
     /********** ATRIBUT **********/
     private Driver driver;
     protected String platNomor;
     protected String jenis;
     protected String model;
     protected int kapasitas;
-    protected double tarifKendaraan;
+    protected int tarifKendaraan;
 
     /********** METHOD **********/
     /* KONSTRUKTOR */
+    // konstruktor tanpa parameter
+    protected Kendaraan(){
+        this.driver = null;
+        this.platNomor = null;
+        this.jenis = null;
+        this.model = null;
+        this.kapasitas = 0;
+        this.tarifKendaraan = 0;
+    }
+
     // konstruktor dengan parameter
     protected Kendaraan(Driver pDriver, String PlatNomor, String Jenis, String Model){
         this.driver = pDriver;
@@ -52,7 +62,7 @@ public class Kendaraan{
     }
 
     // selektor atribut tarifKendaraan
-    public double getTarif(){
+    public int getTarif(){
         return tarifKendaraan;
     }
 
@@ -85,13 +95,21 @@ public class Kendaraan{
     }
 
     // mutator atribut tarifKendaraan
-    public void setTarif(double Tarif){
+    public void setTarif(int Tarif){
         this.tarifKendaraan = Tarif;
     }
 
+
     /* METHOD LAINNYA */
+    // menghitung pajak
+    public double getPajak(){
+        return 0;
+    }
+
+    // menampilkan info tipeMobil khusus class Mobil
     public void infoTipeMobil(){}
 
+    // menampilkan info kendaraan
     public void printInfo(){
         System.out.println("Nama Driver     : " + getDriver().nama);
         System.out.println("Plat Nomor      : " + getPlatNomor());
@@ -100,4 +118,6 @@ public class Kendaraan{
         System.out.println("Model           : " + getModel());
         System.out.println("Kapasitas       : " + getKapasitas());
     }
+
+    
 }
