@@ -9,7 +9,6 @@ public class Perjalanan implements Pajak{
     /***********ATRIBUT************/
     protected String idPerjalanan;
     protected double jarak; 
-    protected int tarifKendaraan; //tarif dasar; motor sekian, mobil sekian
     protected static int hargaPerkm = 5000; // asumsi harga konstan
     protected Kendaraan kendaraan;
     protected Driver driver;

@@ -43,7 +43,7 @@ public class Digital extends Pembayaran{
     }
 
     //assertion
-    public void setBiayaAdmin(int admin){
+    public void setBiayaAdmin(double admin){
         assert (admin > 0) : "Biaya admin tidak mungkin negatif";
         biayaAdmin = admin;
     }
@@ -60,18 +60,18 @@ public class Digital extends Pembayaran{
         return temp;
     }
 
-    // method untuk memperbarui status voucher dan mengkonfirmasi pembayaran
-    @Override
-    public String proses_bayar() throws Exception{
-        if(getNominalUang() < getTarifFinal()){
-            throw new Exception("Gagal, biaya tidak mencukupi!");
-        }
+    // // method untuk memperbarui status voucher dan mengkonfirmasi pembayaran
+    // @Override
+    // public String proses_bayar() throws Exception{
+    //     if(getNominalUang() < getTarifFinal()){
+    //         throw new Exception("Gagal, biaya tidak mencukupi!");
+    //     }
 
-        if(getVoucher() != null && !getVoucher().getSudahDipakai()){
-            getVoucher().setSudahDipakai(true);
-        }
-        return "Pembayaran Sukses";
-    }
+    //     if(getVoucher() != null && !getVoucher().getSudahDipakai()){
+    //         getVoucher().setSudahDipakai(true);
+    //     }
+    //     return "Pembayaran Sukses";
+    // }
 
     // method untuk menampilkan struk atau bukti pembayaran
     @Override

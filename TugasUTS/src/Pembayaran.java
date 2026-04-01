@@ -6,12 +6,11 @@
  * */
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 public abstract class Pembayaran{
     /* ATRIBUT */
     protected int nominal_uang;
-    protected int harga_perjalanan;
     protected LocalDate tanggal_transaksi;
     protected String kode_transaksi;
     private Perjalanan detailPerjalanan;
@@ -34,7 +33,6 @@ public abstract class Pembayaran{
 
     public Pembayaran(Penumpang customer, LocalDate tanggal_transaksi, String kode, Perjalanan jalan, Voucher voucher, Kendaraan vehicle){
         this.nominal_uang = customer.getUang();
-        this.harga_perjalanan = (int)jalan.hitungTarif() * (int)voucher.getDiskon();
         this.tanggal_transaksi = tanggal_transaksi;
         this.kode_transaksi = kode;
         this.detailPerjalanan = jalan;
@@ -97,7 +95,17 @@ public abstract class Pembayaran{
     /* METHOD LAINNYA */
     public abstract int getTarifFinal();
 
-    public abstract String proses_bayar() throws Exception;
+    public String proses_bayar() throws Exception{
+        if(getNominalUang() < getTarifFinal()){
+            throw new Exception("Gagal, biaya tidak mencukupi!");
+        }
+
+        if(getVoucher() != null && !getVoucher().getSudahDipakai()){
+            getVoucher().setSudahDipakai(true);
+        }
+
+        return "Pembayaran Sukses";
+    }
 
     public void printReceipt() throws Exception{
         System.out.println("Status Pembayaran       : " + proses_bayar());

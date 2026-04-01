@@ -36,19 +36,19 @@ public class Cash extends Pembayaran{
         return temp;
     }
 
-    // method untuk memperbarui status voucher dan konfirmasi pembayaran
-    @Override
-    public String proses_bayar() throws Exception{
-        if(getNominalUang() < getTarifFinal()){
-            throw new Exception("Gagal, biaya tidak mencukupi!");
-        }
+    // // method untuk memperbarui status voucher dan konfirmasi pembayaran
+    // @Override
+    // public String proses_bayar() throws Exception{
+    //     if(getNominalUang() < getTarifFinal()){
+    //         throw new Exception("Gagal, biaya tidak mencukupi!");
+    //     }
 
-        if(getVoucher() != null && !getVoucher().getSudahDipakai()){
-            getVoucher().setSudahDipakai(true);
-        }
+    //     if(getVoucher() != null && !getVoucher().getSudahDipakai()){
+    //         getVoucher().setSudahDipakai(true);
+    //     }
 
-        return "Pembayaran Sukses";
-    }
+    //     return "Pembayaran Sukses";
+    // }
 
 
 }
