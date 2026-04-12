@@ -35,9 +35,8 @@ public class Asersi2{
     }
 }
 
-// Laporan untuk Asersi2
-/* Pada program Asersi2, penggunaan asersi kurang tepat karena asersi digunakan
-    untuk meyakinkan bahwa eksekusi program dilakukan secara benar. Asersi juga
-    hanya digunakan untuk keperluan debugging dan bukan untuk validasi data / logika.
-    Sehingga untuk memeriksa nilai jari-jari lebih tepat menggunakan perkondisian if-else
+/* Laporan untuk Asersi2.java */
+/* Pada program Asersi2, penggunaan asersi kurang tepat karena asersi tersebut
+   digunakan untuk validasi input. Seharusnya asersi hanya digunakan untuk keperluan 
+   debugging. Sehingga untuk memeriksa nilai jari-jari lebih tepat menggunakan perkondisian if-else.
 */
