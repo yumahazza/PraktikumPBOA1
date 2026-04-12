@@ -1,6 +1,6 @@
 /* Nama file    : Asersi2.java
  * Deskripsi    : Program untuk demo asersi yang akan menolak input
-                    jari-jari lingkaran yang bernilai nol
+                  jari-jari lingkaran yang bernilai nol
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 26 Maret 2026
  */
