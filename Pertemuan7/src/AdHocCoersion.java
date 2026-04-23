@@ -8,13 +8,21 @@ public class AdHocCoersion{
         int number1 = Integer.parseInt(number);
         double number2 = Double.parseDouble(number);
 
+        System.out.println("Bagian a");
         System.out.println("Nilai x: " + x);
         System.out.println("Nilai x1: " + x1);
         System.out.println("Nilai x2: " + x2);
         System.out.println("Nilai number: " + number);
         System.out.println("Nilai number1: " + number1);
         System.out.println("Nilai number2: " + number2);
+        System.out.println();
 
-        
+        // bagian b
+        int x2_int = (int) x2;
+
+        System.out.println("Bagian b");
+        System.out.println("Nilai x2 setelah diubah ke integer: " + x2_int);
+
+        // bagian c
     }
 }
