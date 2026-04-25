@@ -7,11 +7,11 @@
 public class AdHocCoersion{
     public static void main(String[] args) throws Exception {
         /* bagian a */
-        Integer x = 65;
+        int x = 65;
         String x1 = Character.toString(x);
-        Double x2 = x.doubleValue();
+        Double x2 = (double) x;
         String number = "999";
-        Integer number1 = Integer.parseInt(number);
+        int number1 = Integer.parseInt(number);
         Double number2 = Double.parseDouble(number);
 
         System.out.println("Bagian a");

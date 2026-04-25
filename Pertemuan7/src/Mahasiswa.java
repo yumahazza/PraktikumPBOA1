@@ -7,7 +7,7 @@
 
 public class Mahasiswa{
     /* ATRIBUT */
-    protected String NIM;
+    protected int NIM;
     protected String Nama;
     protected String Programstudi;
 
@@ -15,7 +15,7 @@ public class Mahasiswa{
     /* KONSTRUKTOR */
     // konstruktor tanpa parameter
     public Mahasiswa(){
-        this.NIM = "-999";
+        this.NIM = -999;
         this.Nama = "n/a";
         this.Programstudi = "n/a";
     }
