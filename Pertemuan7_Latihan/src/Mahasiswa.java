@@ -4,7 +4,7 @@
  * Tanggal      : 25 April 2026
  * */
 
-public abstract class Mahasiswa extends Civitasakademika{
+public class Mahasiswa extends Civitasakademika{
     /* ATRIBUT */
     protected String NIM;
     protected Dosen Dosenwali;
@@ -14,11 +14,18 @@ public abstract class Mahasiswa extends Civitasakademika{
     public Mahasiswa(){
         setNama("n/a");
         this.NIM = "n/a";
+        this.Dosenwali = new Dosen();
     }
 
     public Mahasiswa(String P, String X){
         setNama(P);
         this.NIM = X;
+    }
+
+    public Mahasiswa(String P, String X, Dosen D){
+        setNama(P);
+        this.NIM = X;
+        this.Dosenwali = D;
     }
 
     /* SELEKTOR */
@@ -27,7 +34,7 @@ public abstract class Mahasiswa extends Civitasakademika{
         return NIM;
     }
 
-    public Dosen getDosenWali(){
+    public Dosen getWali(){
         return Dosenwali;
     }
 
@@ -41,10 +48,17 @@ public abstract class Mahasiswa extends Civitasakademika{
     }
 
     /* METHOD LAINNYA */
+    @Override
+    public void printInfo(){
+        System.out.println("NIM             : " + getNomor());
+        System.out.println("Nama Mahasiswa  : " + getNama());
+        System.out.println("Nama Dosen Wali : " + getWali().getNama());
+    }
+
     public void tampilDataMahasiswa(){
         System.out.println("NIM             : " + getNomor());
         System.out.println("Nama Mahasiswa  : " + getNama());
-        System.out.println("Nama Dosen Wali : " + getDosenWali());
+        System.out.println("Nama Dosen Wali : " + getWali().getNama());
         
     }
     

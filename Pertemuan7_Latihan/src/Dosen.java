@@ -4,7 +4,7 @@
  * Tanggal      : 25 April 2026
  * */
 
-public abstract class Dosen extends Civitasakademika{
+public class Dosen extends Civitasakademika{
     /* ATRIBUT */
     protected String NIP;
 
