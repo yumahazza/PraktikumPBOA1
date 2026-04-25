@@ -30,6 +30,10 @@ public class Anabul{
     }
 
     /* METHOD LAINNYA */
+    public void Gerak(){}
+
+    public void Bersuara(){}
+
     public void printInfo(){
         System.out.println("Nama    : " + getNama());
     }
