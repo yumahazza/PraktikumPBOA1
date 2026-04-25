@@ -13,8 +13,8 @@ public class MMahasiswa{
         Mahasiswa M4 = new Mahasiswa();
         Mahasiswa M5 = new Mahasiswa();
 
-        M1.setNIM("562041");
-        M2.setNIM("389601");
+        M1.setNIM(562041);
+        M2.setNIM(389601);
         M3.setNIM();
         M4.setNIM();
 
@@ -40,7 +40,7 @@ public class MMahasiswa{
         M5.printInfo();
         
         // bagian d
-        Mahasiswa M6 = new Mahasiswa("857302", "Choi Jiwoo", "Manajemen");
+        Mahasiswa M6 = new Mahasiswa(857302, "Choi Jiwoo", "Manajemen");
         System.out.println("Mahasiswa 6");
         M6.printInfo();
 

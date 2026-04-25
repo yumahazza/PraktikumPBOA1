@@ -20,7 +20,7 @@ public class Mahasiswa{
         this.Programstudi = "n/a";
     }
 
-    public Mahasiswa(String nim, String nama, String Prodi){
+    public Mahasiswa(int nim, String nama, String Prodi){
         this.NIM = nim;
         this.Nama = nama;
         this.Programstudi = Prodi;
@@ -36,10 +36,10 @@ public class Mahasiswa{
 
     /* MUTATOR */ 
     public void setNIM(){
-        this.NIM = "kosong";
+        this.NIM = -999;
     }
 
-    public void setNIM(String nim){
+    public void setNIM(int nim){
         this.NIM = nim;
     }
 
@@ -56,7 +56,7 @@ public class Mahasiswa{
     }
 
     public void setProgramStudi(){
-        this.Programstudi = "Kosong";
+        this.Programstudi = "kosong";
     }
 
     public void setProgramStudi(String P){
@@ -68,7 +68,7 @@ public class Mahasiswa{
     }
 
     /* SELEKTOR */
-    public String getNIM(){
+    public int getNIM(){
         return NIM;
     }
 
