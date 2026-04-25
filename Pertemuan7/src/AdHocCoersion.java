@@ -1,6 +1,7 @@
 /* Nama file    : AdHocCoercion.java
  * Deskripsi    : Program untuk menerapkan konsep polimorfisme ad hoc coersion
- * 
+ * Pembuat      : Yuma Hazza Yuditama
+ * Tanggal      : 23 April 2026
  * */
 
 public class AdHocCoersion{

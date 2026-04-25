@@ -1,3 +1,9 @@
+/* Nama file    : MMahasiswa.java
+ * Deskripsi    : Program main pada class Mahasiswa
+ * Pembuat      : Yuma Hazza Yuditama
+ * Tanggal      : 25 April 2026
+ * */
+
 public class MMahasiswa{
     public static void main(String[] args){
         // bagian a, b, c

@@ -1,3 +1,10 @@
+/* Nama file    : Mahasiswa.java
+ * Deskripsi    : Program implementasi konsep polimorfisme 
+                ad hoc overloading pada class Mahasiswa
+ * Pembuat      : Yuma Hazza Yuditama
+ * Tanggal      : 24 April 2026
+ * */
+
 public class Mahasiswa{
     /* ATRIBUT */
     protected String NIM;
