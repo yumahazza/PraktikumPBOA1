@@ -27,7 +27,8 @@ public class Dosen extends Civitasakademika{
     }
 
     /* MUTATOR */
-    public void setNIP(String P){
+    @Override
+    public void setNomor(String P){
         this.NIP = P;
     }
 

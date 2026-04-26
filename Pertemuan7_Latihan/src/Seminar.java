@@ -35,7 +35,12 @@ public class Seminar{
 
     public void tampilPeserta(){
         for(int i = 0; i < banyakpeserta; i++){
-            System.out.println(i + "." + pesertas[i]);
+            if(pesertas[i] instanceof Mahasiswa){
+                System.out.println((i + 1) + ". " + pesertas[i].getNomor() + " - " + pesertas[i].getNama() + " (Mahasiswa)" );
+            }
+            else{
+                System.out.println((i + 1) + ". " + pesertas[i].getNomor() + " - " + pesertas[i].getNama() + " (Dosen)" );
+            }
         }
     }
 

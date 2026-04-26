@@ -23,6 +23,10 @@ public abstract class Civitasakademika{
         return Nama;
     }
 
+    public abstract String getNomor();
+
+    public abstract void setNomor(String P);
+
     /* MUTATOR */
     public void setNama(String nama){
         this.Nama = nama;
@@ -31,6 +35,5 @@ public abstract class Civitasakademika{
     /* METHOD LAINNYA */
     public abstract void printInfo();
 
-    public abstract String getNomor();
-
+    
 }

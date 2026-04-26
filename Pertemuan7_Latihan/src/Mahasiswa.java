@@ -17,11 +17,6 @@ public class Mahasiswa extends Civitasakademika{
         this.Dosenwali = new Dosen();
     }
 
-    public Mahasiswa(String P, String X){
-        setNama(P);
-        this.NIM = X;
-    }
-
     public Mahasiswa(String P, String X, Dosen D){
         setNama(P);
         this.NIM = X;
@@ -39,7 +34,8 @@ public class Mahasiswa extends Civitasakademika{
     }
 
     /* MUTATOR */
-    public void setNIM(String P){
+    @Override
+    public void setNomor(String P){
         this.NIM = P;
     }
 
@@ -58,8 +54,7 @@ public class Mahasiswa extends Civitasakademika{
     public void tampilDataMahasiswa(){
         System.out.println("NIM             : " + getNomor());
         System.out.println("Nama Mahasiswa  : " + getNama());
-        System.out.println("Nama Dosen Wali : " + getWali().getNama());
-        
+        System.out.println("Nama Dosen Wali : " + getWali().getNama());  
     }
     
 }
