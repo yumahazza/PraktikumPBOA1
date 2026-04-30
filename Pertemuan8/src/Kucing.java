@@ -6,20 +6,29 @@
 
 public class Kucing extends Anabul{
     /* ATRIBUT */
+    protected int bobot;
 
     /* METHOD / OPERATOR */
     /* KONSTRUKTOR */
     public Kucing(){
         setNama("kosong");
+        this.bobot = 4;
     }
 
-    public Kucing(String P){
+    public Kucing(String P, int x){
         setNama(P);
+        this.bobot = x;
     }
 
     /* MUTATOR */
+    public void setBobot(int x){
+        this.bobot = x;
+    }
     
     /* SELEKTOR */
+    public int getBobot(){
+        return bobot;
+    }
 
     /* METHOD LAINNYA */
     @Override
@@ -39,6 +48,7 @@ public class Kucing extends Anabul{
         this.Gerak();
         System.out.print("Suara   : " );
         this.Bersuara();
+        System.out.println("Bobot   : " + getBobot());
         System.out.println();
     }
 }

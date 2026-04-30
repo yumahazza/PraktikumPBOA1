@@ -10,6 +10,7 @@ public class MAnabul{
         Anabul A1 = new Kucing();
         Anabul A2 = new Anjing();
         Anabul A3 = new Burung();
+        Anabul A4 = new Kucing("Oceng", 5);
 
         A1.setNama("Areng");
         System.out.println("Anabul A1");
@@ -20,5 +21,8 @@ public class MAnabul{
         A3.setNama("Kicau");
         System.out.println("Anabul A3");
         A3.printInfo();
+
+        System.out.println("Anabul A4");
+        A4.printInfo();
     }
 }
