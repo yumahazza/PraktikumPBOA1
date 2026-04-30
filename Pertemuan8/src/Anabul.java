@@ -7,7 +7,7 @@
 
 public class Anabul{
     /* ATRIBUT */
-    private String Nama;
+    protected String Nama;
 
     /* METHOD / OPERATOR */
     /* KONSTRUKTOR */

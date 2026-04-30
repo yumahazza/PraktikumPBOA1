@@ -1,19 +1,19 @@
-/* Nama file    : Anggora.java
+/* Nama file    : Kembangtelon.java
  * Deskripsi    : Program class Kucing
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 30 April 2026
  * */
 
-public class Anggora extends Kucing{
+public class Kembangtelon extends Kucing{
     /* ATRIBUT */
 
     /* OPERATOR */
-    public Anggora(){
+    public Kembangtelon(){
         setNama("kosong");
         this.bobot = 4;
     }
 
-    public Anggora(String P, int x){
+    public Kembangtelon(String P, int x){
         setNama(P);
         this.bobot = x;
     }

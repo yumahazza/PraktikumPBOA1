@@ -11,6 +11,8 @@ public class MAnabul{
         Anabul A2 = new Anjing();
         Anabul A3 = new Burung();
         Anabul A4 = new Kucing("Oceng", 5);
+        Datum<Anabul> G1 = new Datum<>();
+        G1.setIsi(A1);
 
         A1.setNama("Areng");
         System.out.println("Anabul A1");
@@ -21,8 +23,10 @@ public class MAnabul{
         A3.setNama("Kicau");
         System.out.println("Anabul A3");
         A3.printInfo();
-
         System.out.println("Anabul A4");
         A4.printInfo();
+        System.out.println("Anabul G1");
+        System.out.println("--- " + G1.getIsi());
+
     }
 }
