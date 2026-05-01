@@ -1,3 +1,9 @@
+/* Nama file    : Kembangtelon.java
+ * Deskripsi    : Program class Kucing
+ * Pembuat      : Yuma Hazza Yuditama
+ * Tanggal      : 30 April 2026
+ * */
+
 public class Datum<G>{
     /* ATRIBUT */
     protected G isi;
@@ -7,7 +13,7 @@ public class Datum<G>{
         return isi;
     }
 
-    public void setIsi(G x){
-        this.isi = x;
+    public void setIsi(G isibaru){
+        this.isi = isibaru;
     }
 }

@@ -5,14 +5,18 @@
  * Tanggal      : 30 April 2026
  * */
 
+
+
 public class MAnabul{
     public static void main(String[] args) {
+        System.out.println("APLIKASI Class Anabul, Kucing, Anjing, dan Burung");
         Anabul A1 = new Kucing();
         Anabul A2 = new Anjing();
         Anabul A3 = new Burung();
         Anabul A4 = new Kucing("Oceng", 5);
-        Datum<Anabul> G1 = new Datum<>();
-        G1.setIsi(A1);
+        Datum<Kucing> G1 = new Datum<>();
+        Kucing K1 = new Kucing("Acid", 5);
+        G1.setIsi(K1);
 
         A1.setNama("Areng");
         System.out.println("Anabul A1");
@@ -27,6 +31,15 @@ public class MAnabul{
         A4.printInfo();
         System.out.println("Anabul G1");
         System.out.println("--- " + G1.getIsi());
+        
+
+        System.out.println("APLIKASI TUKAR SESAMA INTEGER");
+        Ref<Integer> a = new Ref<>(3);
+        Ref<Integer> b = new Ref<>(6);
+        System.out.println("Sebelum ditukar: a = " + a.val + ", b = " + b.val);
+        OperatorGenerik.Tukar(a, b);
+        System.out.println("Setelah ditukar: a = " + a.val + ", b = " + b.val);
+
 
     }
 }
