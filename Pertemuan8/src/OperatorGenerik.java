@@ -6,13 +6,18 @@
  * */
 
 class Ref<G>{
+    /* ATRIBUT */
     public G val;
+
+    /* METHOD */
     public Ref(G v){
         this.val = v;
     }
+
 }
 
 public class OperatorGenerik{
+    /* METHOD */
     // Prosedur Tukar
     public static <G> void Tukar(Ref<G> a, Ref<G> b){
         G temp = a.val;
@@ -20,8 +25,9 @@ public class OperatorGenerik{
         b.val = temp;
     }
 
-    // Prosedur total Bobot
+    // Prosedur total Bobot 2 objek Kucing
     public static <G extends Kucing, H extends Kucing> double Bobot2(G a, H b){
         return a.getBobot() + b.getBobot();
-    } 
+    }
+
 }

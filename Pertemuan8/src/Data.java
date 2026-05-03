@@ -1,45 +1,47 @@
-/* Nama file    : OperatorGenerik.java
- * Deskripsi    : Program main unutk implementasi poliforfisme
-                    universal inclusion
+/* Nama file    : Data.java
+ * Deskripsi    : Program untuk kelas generik Data
  * Pembuat      : Yuma Hazza Yuditama
- * Tanggal      : 1 Mei 2026
+ * Tanggal      : 3 Mei 2026
  * */
 
-class Data<T> {
+class Data<T>{
+    /* ATRIBUT */
     private T[] ruang;
     private int banyak;
 
+    /* METHOD / OPERATOR */
+    /* KONSTRUKTOR */
     @SuppressWarnings("unchecked")
-    public Data() {
-        ruang = (T[]) new Object[100]; // array generik
+    public Data(){
+        ruang = (T[]) new Object[100];
         banyak = 0;
     }
 
-    // setIsi
-    public void setIsi(int posisi, T nilai) {
-        if (posisi < 1 || posisi > 100) {
+    // Prosedur setIsi
+    public void setIsi(int posisi, T nilai){
+        if(posisi < 1 || posisi > 100){
             System.out.println("Posisi tidak valid!");
             return;
         }
 
-        if (ruang[posisi - 1] == null) {
-            banyak++; // elemen baru
+        if(ruang[posisi - 1] == null){
+            banyak++;
         }
 
         ruang[posisi - 1] = nilai;
     }
 
-    // getIsi
-    public T getIsi(int posisi) {
-        if (posisi < 1 || posisi > 100) {
-            System.out.println("Posisi tidak valid!");
+    // Fungsi getIsi
+    public T getIsi(int posisi){
+        if(posisi < 1 || posisi > 100){
             return null;
         }
         return ruang[posisi - 1];
     }
 
-    // getSize
-    public int getSize() {
+    // Fungsi getSize
+    public int getSize(){
         return banyak;
     }
+
 }
