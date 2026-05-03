@@ -20,7 +20,7 @@ public class OperatorGenerik{
         b.val = temp;
     }
 
-    // 
+    // Prosedur total Bobot
     public static <G extends Kucing, H extends Kucing> double Bobot2(G a, H b){
         return a.getBobot() + b.getBobot();
     } 
