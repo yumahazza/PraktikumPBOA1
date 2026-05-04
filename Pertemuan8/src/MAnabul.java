@@ -1,6 +1,5 @@
 /* Nama file    : MAnabul.java
- * Deskripsi    : Program main unutk implementasi poliforfisme
-                    universal inclusion
+ * Deskripsi    : Program main untuk implementasi kelas generik
  * Pembuat      : Yuma Hazza Yuditama
  * Tanggal      : 30 April 2026
  * */
