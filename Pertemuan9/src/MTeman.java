@@ -1,6 +1,7 @@
 /* Nama file : MTeman.java
  * Deskripsi : Kelas main untuk koleksi Teman
  * Pembuat   : Yuma Hazza Yuditama
+ * NIM       : 24060124120035
  * Tanggal   : 4 Mei 2026
 * */
 

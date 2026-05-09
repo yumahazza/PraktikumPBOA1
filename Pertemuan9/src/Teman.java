@@ -1,6 +1,7 @@
 /* Nama file : Teman.java
  * Deskripsi : Kelas untuk koleksi objek generik
  * Pembuat   : Yuma Hazza Yuditama
+ * NIM       : 24060124120035
  * Tanggal   : 4 Mei 2026
 * */
 
@@ -18,6 +19,7 @@ public class Teman{
         Lnama = new ArrayList<>();
         nbelm = 0;
     }
+
     public int getNbelm(){
         return nbelm;
     }
