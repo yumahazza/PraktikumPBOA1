@@ -5,35 +5,26 @@
  * Tanggal   : 9 Mei 2026
 * */
 
-import java.util.Queue;
+import java.util.*;
 
-public class Piaraan {
+public class Piaraan{
     /* ATRIBUT */
     private int nbelm;
     private Queue<Anabul> Lanabul;
-    private String panggilan;
 
     /* OPERATOR */
     /* KONSTRUKTOR */
     public Piaraan(){
-        this.nbelm = 0;
-        this.Lanabul = null;
-        this.panggilan = null;
+        Lanabul = new LinkedList<>();
+        nbelm = 0;
     }
 
     /* SELEKTOR */
-    public String getNama(){
-        return panggilan;
-    }
-
     public int getNbelm(){
         return nbelm;
     }
 
     /* MUTATOR */
-    public void setNama(String nama){
-        this.panggilan = nama;
-    }
 
     /* OPERATOR LAINNYA */
     public void enqueueAnabul(Anabul X){
@@ -45,13 +36,47 @@ public class Piaraan {
         return Lanabul.contains(X);
     }
 
-    public Anabul getAnabul(){
-        return Lanabul.peek();
+    public void getAnabul(){
+        Anabul x = Lanabul.peek();
+        x.printInfo();
     }
 
     public void dequeueAnabul(){
-        Lanabul.poll();
-        this.nbelm--;
+        if(!Lanabul.isEmpty()){
+            Lanabul.poll();
+            this.nbelm--;
+        }
+    }
+
+    public void showAnabul(){
+        int i = 0;
+        for(Anabul a : Lanabul){
+            i++;
+            System.out.println(i + ". " + a.getNama());
+        }
+    }
+
+    public int countKucing(){
+        int count = 0;
+        for(Anabul a : Lanabul){
+            if(a instanceof Kucing){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public int bobotKucing(){
+        int bobot = 0;
+        for(Anabul a : Lanabul){
+            if(a instanceof Kucing){
+                Kucing b = (Kucing) a;
+                bobot += b.getBobot();
+            }
+        }
+
+        return bobot;
     }
 
 

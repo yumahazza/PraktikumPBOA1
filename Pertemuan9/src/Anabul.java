@@ -8,20 +8,27 @@
 public class Anabul{
     /* ATRIBUT */
     protected String Nama;
+    private String panggilan;
 
     /* METHOD / OPERATOR */
     /* KONSTRUKTOR */
     public Anabul(){
         this.Nama = "kosong";
+        this.panggilan = "kosong";
     }
 
-    public Anabul(String P){
+    public Anabul(String P, String Q){
         this.Nama = P;
+        this.panggilan = Q;
     }
 
     /* SELEKTOR */
     public String getNama(){
         return Nama;
+    }
+
+    public String getPanggilan(){
+        return panggilan;
     }
 
     /* MUTATOR */
