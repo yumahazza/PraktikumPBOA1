@@ -20,6 +20,11 @@ public class Kucing extends Anabul{
         this.bobot = x;
     }
 
+    public Kucing(String P, String Q){
+        setNama(P);
+        setPanggilan(Q);
+    }
+
     /* MUTATOR */
     public void setBobot(int x){
         this.bobot = x;

@@ -17,6 +17,11 @@ public class Anjing extends Anabul{
         setNama(P);
     }
 
+    public Anjing(String P, String Q){
+        setNama(P);
+        setPanggilan(Q);
+    }
+
     /* MUTATOR */
     
     /* SELEKTOR */

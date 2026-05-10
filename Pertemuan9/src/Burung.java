@@ -17,6 +17,11 @@ public class Burung extends Anabul{
         setNama(P);
     }
 
+    public Burung(String P, String Q){
+        setNama(P);
+        setPanggilan(Q);
+    }
+
     /* MUTATOR */
     
     /* SELEKTOR */

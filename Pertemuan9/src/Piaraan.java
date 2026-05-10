@@ -79,6 +79,16 @@ public class Piaraan{
         return bobot;
     }
 
+    public void showJenisAnabul(){
+        int i = 0;
+        for(Anabul a : Lanabul){
+            i++;
+            System.out.println(i + ". Nama Objek  : " + a.getNama());
+            System.out.println("   Panggilan   : " + a.getPanggilan());
+            System.out.println("   Jenis Objek : " + a.getClass());
+        } 
+    }
+
 
 
 
