@@ -36,6 +36,10 @@ public class Anabul{
         this.Nama = P;
     }
 
+    public void setPanggilan(String Q){
+        this.panggilan = Q;
+    }
+
     /* METHOD LAINNYA */
     public void Gerak(){}
 
